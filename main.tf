@@ -23,10 +23,11 @@ module "user_data" {
 }
 
 resource "azurerm_public_ip" "this" {
-  create              = var.create_eip ? 1 : 0
+  count               = var.create_eip ? 1 : 0
   location            = data.azurerm_resource_group.this.location
   name                = "public-eip"
   resource_group_name = data.azurerm_resource_group.this.name
+  allocation_method   = "Static"
 }
 
 resource "azurerm_network_interface" "public" {
@@ -39,7 +40,7 @@ resource "azurerm_network_interface" "public" {
     primary                       = true
     subnet_id                     = var.public_subnet_id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = var.create_eip ? azurerm_public_ip.this.id : null
+    public_ip_address_id          = var.create_eip ? azurerm_public_ip.this[0].id : null
   }
 }
 
@@ -80,7 +81,7 @@ resource "azurerm_linux_virtual_machine" "this" {
   name                = var.node_name
   resource_group_name = data.azurerm_resource_group.this.name
   location            = data.azurerm_resource_group.this.location
-  vm_size             = var.instance_type
+  size                = var.instance_type
   admin_username      = "ubuntu"
   custom_data         = base64encode(module.user_data.user_data)
 
