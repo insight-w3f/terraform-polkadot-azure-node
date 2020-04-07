@@ -74,3 +74,35 @@ resource "azurerm_network_interface_application_security_group_association" "pri
   application_security_group_id = var.application_security_group_id
   network_interface_id          = azurerm_network_interface.private.id
 }
+
+resource "azurerm_linux_virtual_machine" "this" {
+  count               = var.create ? 1 : 0
+  name                = var.node_name
+  resource_group_name = data.azurerm_resource_group.this.name
+  location            = data.azurerm_resource_group.this.location
+  vm_size             = var.instance_type
+  admin_username      = "ubuntu"
+  custom_data         = base64encode(module.user_data.user_data)
+
+  network_interface_ids = [
+    azurerm_network_interface.public.id,
+    azurerm_network_interface.private.id,
+  ]
+
+  admin_ssh_key {
+    username   = "ubuntu"
+    public_key = file(var.public_key_path)
+  }
+
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  source_image_reference {
+    publisher = "Canonical"
+    offer     = "UbuntuServer"
+    sku       = "18.04-LTS"
+    version   = "latest"
+  }
+}

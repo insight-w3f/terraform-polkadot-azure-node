@@ -44,13 +44,18 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | application\_security\_group\_id | The id of the application security group to run in | `string` | n/a | yes |
 | azure\_resource\_group\_name | Name of Azure Resource Group | `string` | n/a | yes |
+| create | Bool to create the resources | `bool` | `true` | no |
 | create\_eip | Boolean to create elastic IP | `bool` | `false` | no |
 | environment | The environment | `string` | `""` | no |
+| instance\_type | Instance type | `string` | `"Standard_A2_v2"` | no |
+| key\_name | The name of the preexisting key to be used instead of the local public\_key\_path | `string` | `""` | no |
 | namespace | The namespace to deploy into | `string` | `""` | no |
 | network\_name | The network name, ie kusama / mainnet | `string` | `""` | no |
 | network\_security\_group\_id | The id of the network security group to run in | `string` | n/a | yes |
+| node\_name | Name of the node | `string` | `"node"` | no |
 | owner | Owner of the infrastructure | `string` | `""` | no |
 | private\_subnet\_id | The id of the subnet. | `string` | n/a | yes |
+| public\_key\_path | The path to the public ssh key | `string` | n/a | yes |
 | public\_subnet\_id | The id of the subnet. | `string` | n/a | yes |
 | stage | The stage of the deployment | `string` | `""` | no |
 

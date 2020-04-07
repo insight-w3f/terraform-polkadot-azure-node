@@ -1,3 +1,8 @@
+variable "create" {
+  description = "Bool to create the resources"
+  type        = bool
+  default     = true
+}
 
 #####
 # Azure
@@ -38,6 +43,32 @@ variable "owner" {
   description = "Owner of the infrastructure"
   type        = string
   default     = ""
+}
+
+#####
+# instance
+#####
+variable "node_name" {
+  description = "Name of the node"
+  type        = string
+  default     = "node"
+}
+
+variable "public_key_path" {
+  description = "The path to the public ssh key"
+  type        = string
+}
+
+variable "key_name" {
+  description = "The name of the preexisting key to be used instead of the local public_key_path"
+  type        = string
+  default     = ""
+}
+
+variable "instance_type" {
+  description = "Instance type"
+  type        = string
+  default     = "Standard_A2_v2"
 }
 
 #########
