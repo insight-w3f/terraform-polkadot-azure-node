@@ -1,4 +1,12 @@
 
+#####
+# Azure
+#####
+variable "azure_resource_group_name" {
+  description = "Name of Azure Resource Group"
+  type        = string
+}
+
 ########
 # Label
 ########

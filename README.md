@@ -34,12 +34,15 @@ No requirements.
 
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| azurerm | n/a |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| azure\_resource\_group\_name | Name of Azure Resource Group | `string` | n/a | yes |
 | environment | The environment | `string` | `""` | no |
 | namespace | The namespace to deploy into | `string` | `""` | no |
 | network\_name | The network name, ie kusama / mainnet | `string` | `""` | no |
