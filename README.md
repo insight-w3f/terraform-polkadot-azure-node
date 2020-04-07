@@ -1,7 +1,8 @@
 # terraform-polkadot-azure-node
 
-[![open-issues](https://img.shields.io/github/issues-raw/shinyfoil/terraform-polkadot-azure-node?style=for-the-badge)](https://github.com/shinyfoil/terraform-polkadot-azure-node/issues)
-[![open-pr](https://img.shields.io/github/issues-pr-raw/shinyfoil/terraform-polkadot-azure-node?style=for-the-badge)](https://github.com/shinyfoil/terraform-polkadot-azure-node/pulls)
+[![open-issues](https://img.shields.io/github/issues-raw/insight-w3f/terraform-polkadot-azure-node?style=for-the-badge)](https://github.com/insight-w3f/terraform-polkadot-azure-node/issues)
+[![open-pr](https://img.shields.io/github/issues-pr-raw/insight-w3f/terraform-polkadot-azure-node?style=for-the-badge)](https://github.com/insight-w3f/terraform-polkadot-azure-node/pulls)
+[![build-status](https://circleci.com/gh/insight-w3f/terraform-polkadot-azure-node.svg?style=svg)](https://circleci.com/gh/insight-w3f/terraform-polkadot-azure-node)
 
 ## Features
 
@@ -15,13 +16,13 @@ For Terraform v0.12.0+
 
 ```
 module "this" {
-    source = "github.com/shinyfoil/terraform-polkadot-azure-node"
+    source = "github.com/insight-w3f/terraform-polkadot-azure-node"
 
 }
 ```
 ## Examples
 
-- [defaults](https://github.com/shinyfoil/terraform-polkadot-azure-node/tree/master/examples/defaults)
+- [defaults](https://github.com/insight-w3f/terraform-polkadot-azure-node/tree/master/examples/defaults)
 
 ## Known  Issues
 No issue is creating limit on this module.
