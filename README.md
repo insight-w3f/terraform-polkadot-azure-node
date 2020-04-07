@@ -42,11 +42,16 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| application\_security\_group\_id | The id of the application security group to run in | `string` | n/a | yes |
 | azure\_resource\_group\_name | Name of Azure Resource Group | `string` | n/a | yes |
+| create\_eip | Boolean to create elastic IP | `bool` | `false` | no |
 | environment | The environment | `string` | `""` | no |
 | namespace | The namespace to deploy into | `string` | `""` | no |
 | network\_name | The network name, ie kusama / mainnet | `string` | `""` | no |
+| network\_security\_group\_id | The id of the network security group to run in | `string` | n/a | yes |
 | owner | Owner of the infrastructure | `string` | `""` | no |
+| private\_subnet\_id | The id of the subnet. | `string` | n/a | yes |
+| public\_subnet\_id | The id of the subnet. | `string` | n/a | yes |
 | stage | The stage of the deployment | `string` | `""` | no |
 
 ## Outputs

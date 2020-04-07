@@ -39,3 +39,32 @@ variable "owner" {
   type        = string
   default     = ""
 }
+
+#########
+# Network
+#########
+variable "create_eip" {
+  description = "Boolean to create elastic IP"
+  type        = bool
+  default     = false
+}
+
+variable "public_subnet_id" {
+  description = "The id of the subnet."
+  type        = string
+}
+
+variable "private_subnet_id" {
+  description = "The id of the subnet."
+  type        = string
+}
+
+variable "application_security_group_id" {
+  description = "The id of the application security group to run in"
+  type        = string
+}
+
+variable "network_security_group_id" {
+  description = "The id of the network security group to run in"
+  type        = string
+}
