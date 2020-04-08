@@ -99,3 +99,30 @@ variable "network_security_group_id" {
   description = "The id of the network security group to run in"
   type        = string
 }
+
+#########
+# Ansible
+#########
+variable "private_key_path" {
+  description = "The path to the private ssh key"
+  type        = string
+  default     = ""
+}
+
+variable "wireguard_validator_pubkey" {
+  description = "Validator WG public key"
+  type        = string
+  default     = "jxvsfOegft5FNmd2HSxGQBz/dmCeluk/iWIYrLMuki0="
+}
+
+variable "validator_vpn_peer_addr" {
+  description = "Validator VPN peer address"
+  type        = string
+  default     = "172.16.0.1/24"
+}
+
+variable "validator_ip" {
+  description = "Validator public IP"
+  type        = string
+  default     = "34.229.64.120"
+}

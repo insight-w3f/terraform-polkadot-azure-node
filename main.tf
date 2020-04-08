@@ -107,3 +107,29 @@ resource "azurerm_linux_virtual_machine" "this" {
     version   = "latest"
   }
 }
+
+module "ansible" {
+  source = "github.com/insight-infrastructure/terraform-aws-ansible-playbook.git"
+
+  inventory_template = "${path.module}/ansible_inventory.tpl"
+
+  inventory_template_vars = {
+    node-ip   = azurerm_public_ip.this[0].ip_address
+    node-name = var.node_name
+
+    wireguard_validator_pubkey = var.wireguard_validator_pubkey
+    validator_vpn_peer_addr    = var.validator_vpn_peer_addr
+    validator_ip               = var.validator_ip
+  }
+
+  playbook_file_path = "${path.module}/ansible/main.yml"
+
+  playbook_vars = {
+    node_exporter_enabled = false
+  }
+
+  user             = "ubuntu"
+  private_key_path = var.private_key_path
+
+  module_depends_on = azurerm_linux_virtual_machine.this
+}
