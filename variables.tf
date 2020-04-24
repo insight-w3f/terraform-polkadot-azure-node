@@ -109,20 +109,44 @@ variable "private_key_path" {
   default     = ""
 }
 
-variable "wireguard_validator_pubkey" {
-  description = "Validator WG public key"
+variable "node_exporter_user" {
+  description = "User for node exporter"
   type        = string
-  default     = "jxvsfOegft5FNmd2HSxGQBz/dmCeluk/iWIYrLMuki0="
+  default     = "node_exporter_user"
 }
 
-variable "validator_vpn_peer_addr" {
-  description = "Validator VPN peer address"
+variable "node_exporter_password" {
+  description = "Password for node exporter"
   type        = string
-  default     = "172.16.0.1/24"
+  default     = "node_exporter_password"
 }
 
-variable "validator_ip" {
-  description = "Validator public IP"
+variable "project" {
+  description = "Name of the project for node name"
   type        = string
-  default     = "34.229.64.120"
+  default     = "project"
+}
+
+variable "telemetry_url" {
+  description = "WSS URL for telemetry"
+  type        = string
+  default     = "wss://mi.private.telemetry.backend/"
+}
+
+variable "logging_filter" {
+  description = "String for polkadot logging filter"
+  type        = string
+  default     = "sync=trace,afg=trace,babe=debug"
+}
+
+variable "relay_node_ip" {
+  description = "Internal IP of Polkadot relay node"
+  type        = string
+  default     = ""
+}
+
+variable "relay_node_p2p_address" {
+  description = "P2P address of Polkadot relay node"
+  type        = string
+  default     = ""
 }

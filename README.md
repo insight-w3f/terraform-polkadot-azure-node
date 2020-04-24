@@ -49,19 +49,23 @@ No requirements.
 | environment | The environment | `string` | `""` | no |
 | instance\_type | Instance type | `string` | `"Standard_A2_v2"` | no |
 | key\_name | The name of the preexisting key to be used instead of the local public\_key\_path | `string` | `""` | no |
+| logging\_filter | String for polkadot logging filter | `string` | `"sync=trace,afg=trace,babe=debug"` | no |
 | namespace | The namespace to deploy into | `string` | `""` | no |
 | network\_name | The network name, ie kusama / mainnet | `string` | `""` | no |
 | network\_security\_group\_id | The id of the network security group to run in | `string` | n/a | yes |
+| node\_exporter\_password | Password for node exporter | `string` | `"node_exporter_password"` | no |
+| node\_exporter\_user | User for node exporter | `string` | `"node_exporter_user"` | no |
 | node\_name | Name of the node | `string` | `"node"` | no |
 | owner | Owner of the infrastructure | `string` | `""` | no |
 | private\_key\_path | The path to the private ssh key | `string` | `""` | no |
 | private\_subnet\_id | The id of the subnet. | `string` | n/a | yes |
+| project | Name of the project for node name | `string` | `"project"` | no |
 | public\_key\_path | The path to the public ssh key | `string` | n/a | yes |
 | public\_subnet\_id | The id of the subnet. | `string` | n/a | yes |
+| relay\_node\_ip | Internal IP of Polkadot relay node | `string` | `""` | no |
+| relay\_node\_p2p\_address | P2P address of Polkadot relay node | `string` | `""` | no |
 | stage | The stage of the deployment | `string` | `""` | no |
-| validator\_ip | Validator public IP | `string` | `"34.229.64.120"` | no |
-| validator\_vpn\_peer\_addr | Validator VPN peer address | `string` | `"172.16.0.1/24"` | no |
-| wireguard\_validator\_pubkey | Validator WG public key | `string` | `"jxvsfOegft5FNmd2HSxGQBz/dmCeluk/iWIYrLMuki0="` | no |
+| telemetry\_url | WSS URL for telemetry | `string` | `"wss://mi.private.telemetry.backend/"` | no |
 
 ## Outputs
 

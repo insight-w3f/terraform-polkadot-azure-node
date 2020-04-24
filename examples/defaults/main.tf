@@ -21,6 +21,7 @@ module "defaults" {
   create                        = true
   create_eip                    = true
   public_key_path               = var.public_key_path
+  private_key_path              = var.private_key_path
   application_security_group_id = module.network.sentry_application_security_group_id[0]
   azure_resource_group_name     = azurerm_resource_group.this.name
   network_security_group_id     = module.network.sentry_network_security_group_id[0]
