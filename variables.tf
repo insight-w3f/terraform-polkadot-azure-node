@@ -121,6 +121,36 @@ variable "node_exporter_password" {
   default     = "node_exporter_password"
 }
 
+variable "polkadot_client_url" {
+  description = "URL to Polkadot client binary"
+  type        = string
+  default     = "https://github.com/w3f/polkadot/releases/download/v0.7.32/polkadot"
+}
+
+variable "polkadot_client_hash" {
+  description = "SHA256 hash of Polkadot client binary"
+  type        = string
+  default     = "c34d63e5d80994b2123a3a0b7c5a81ce8dc0f257ee72064bf06654c2b93e31c9"
+}
+
+variable "node_exporter_url" {
+  description = "URL to Node Exporter binary"
+  type        = string
+  default     = "https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz"
+}
+
+variable "node_exporter_hash" {
+  description = "SHA256 hash of Node Exporter binary"
+  type        = string
+  default     = "b2503fd932f85f4e5baf161268854bf5d22001869b84f00fd2d1f57b51b72424"
+}
+
+variable "chain" {
+  description = "Which Polkadot chain to join"
+  type        = string
+  default     = "kusama"
+}
+
 variable "project" {
   description = "Name of the project for node name"
   type        = string
